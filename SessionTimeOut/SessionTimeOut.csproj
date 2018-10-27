@@ -102,15 +102,16 @@
     <Content Include="Scripts\session.time.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Shared\_Layout_Login.cshtml" />
-    <Content Include="Views\Dashboard\Login.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\SessionTime.cs" />
+    <Compile Include="Security\SessionTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Settings.cs" />
   </ItemGroup>
@@ -124,6 +125,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Dashboard\Pag1.cshtml" />
+    <Content Include="Views\Dashboard\Pag2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -133,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

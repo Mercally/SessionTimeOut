@@ -16,7 +16,7 @@ namespace SessionTimeOut
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "dashboard", action = "login", id = UrlParameter.Optional }
+                defaults: new { controller = "home", action = "login", id = UrlParameter.Optional }
             );
         }
     }

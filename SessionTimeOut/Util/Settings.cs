@@ -20,7 +20,7 @@ namespace SessionTimeOut.Util
         {
             get
             {
-                string SessionTimeWait = System.Configuration.ConfigurationManager.AppSettings["Session.TimeWait"];
+                string SessionTimeWait = System.Configuration.ConfigurationManager.AppSettings["Session.TimeWait"]; // Se ingresa en segundos
                 return Convert.ToInt32(SessionTimeWait);
             }
         }

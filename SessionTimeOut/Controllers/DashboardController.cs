@@ -1,5 +1,4 @@
-﻿using SessionTimeOut.Models;
-using SessionTimeOut.Util;
+﻿using SessionTimeOut.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,36 +9,22 @@ namespace SessionTimeOut.Controllers
 {
     public class DashboardController : Controller
     {
-        // GET: Dashboard
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Login()
+        [HttpGet]
+        public ActionResult Pag1()
         {
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Login(string user, string pass)
+        [HttpGet]
+        public ActionResult Pag2()
         {
-            SessionTime.CreateSession();
-            return RedirectToActionPermanent("Index");
-        }
-
-        [HttpPost]
-        [OutputCache(NoStore = true, Duration = 0)]
-        public ActionResult InSession()
-        {
-            return Json(SessionTime.Current, JsonRequestBehavior.DenyGet);
-        }
-
-        [OutputCache(NoStore = true, Duration = 0)]
-        public ActionResult CloseSession()
-        {
-            SessionTime.CloseSession();
-            return RedirectToActionPermanent("Login");
+            return View();
         }
     }
 }

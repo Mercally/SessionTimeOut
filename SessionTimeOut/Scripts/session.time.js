@@ -1,4 +1,14 @@
-﻿$(window).load(function () {
+﻿
+/*
+ * Author: josuemercally@gmail.com
+ * Date: 27/10/2018
+ * 
+ *
+ */
+
+"use strict";
+
+$(window).load(function () {
     $(document).ready(function () {
         $("body").on("click", "button#btn-close-session-modal", function () {
             closeSession();
@@ -18,6 +28,7 @@
 
         function displaySesion() {
             if (!initTimeOut.InSession) {
+                $("h2#status-session-time").text("Off");
                 closeSessionAlert("El tiempo de permanencia de usuario inactivo se ha agotado.");
             } else {
                 $("h2#status-session-time").text("On");
@@ -58,10 +69,10 @@
         function getInitialTimeOut() {
             var response = {};
             $.ajax({
-                type: 'post',
+                type: "post",
                 async: false,
                 cache: false,
-                url: '/dashboard/insession',
+                url: "/Home/InSession",
                 success: function (_response) {
                     response = _response;
                 }, error: function () {
@@ -88,13 +99,12 @@
                 $("span#cuentaRegresiva").html(secWaitCloseSesssion + " seg.");
 
             if (secWaitCloseSesssion === 0) {
-                $("h2#status-session-time").text("Off");
                 closeSession();
             }
         }
 
         function closeSession() {
-            window.location = "/dashboard/closesession";
+            window.location = "/Home/CloseSession";
         }
 
         function keepSession() {
